@@ -1,14 +1,19 @@
+(Tom tat ket qua: bao nhieu records da xu ly, bao nhieu bi loai, v.v.)
+
 [![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-2e0aaae1b6195c2367325f4f02e2d04e9abb55f0b24a779b69b11b9e10269abc.svg)](https://classroom.github.com/online_ide?assignment_repo_id=23574086&assignment_repo_type=AssignmentRepo)
 # Day 10 Lab: Data Pipeline & Data Observability
 
-**Student Email:** email@example.com
-**Name:** (Dien ten cua ban)
+**Student Email:** ndhphuc2005@gmail.com 
+**Name:** Nguyen Duc Hoang Phuc
 
 ---
 
 ## Mo ta
 
-(Mo ta ngan gon bai lab va nhung gi ban da lam)
+Bai lab nay xay dung mot ETL pipeline gom 4 buoc: Extract, Validate, Transform va Load.  
+Toi da doc du lieu tu file JSON, loai bo cac record khong hop le (gia <= 0, category rong), sau do transform du lieu bang cach tinh gia sau giam 10% va chuan hoa category. Cuoi cung, du lieu duoc luu ra file CSV.  
+
+Ngoai ra, toi thuc hien mot thi nghiem so sanh giua clean data va garbage data de danh gia anh huong cua data quality den ket qua cua AI Agent.
 
 ---
 
@@ -26,7 +31,8 @@ python solution.py
 
 ### Chay Agent Simulation (Stress Test)
 ```bash
-# Mo ta cach ban chay thi nghiem Clean vs Garbage data
+python generate_garbage.py
+python agent_simulation.py
 ```
 
 ---
@@ -44,4 +50,10 @@ python solution.py
 
 ## Ket qua
 
-(Tom tat ket qua: bao nhieu records da xu ly, bao nhieu bi loai, v.v.)
+Pipeline da xu ly thanh cong du lieu:
+
+- Tong so record ban dau: 5
+- So record hop le: 3
+- So record bi loai: 2
+
+Cac record bi loai do gia <= 0 hoac category rong. Ket qua cho thay ETL pipeline hoat dong dung, tuy nhien garbage data van co the gay anh huong den ket qua cua Agent neu khong co validation nang cao.
